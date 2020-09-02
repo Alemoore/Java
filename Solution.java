@@ -37,7 +37,13 @@ public class Solution {
                 }
             }
         }
-        return map.entrySet().stream().sorted(Map.Entry.comparingByValue(Collections.reverseOrder())).limit(1).mapToInt(Map.Entry::getValue).findAny().getAsInt();
+        return map.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue(Collections.reverseOrder()))
+                .limit(1)
+                .mapToInt(Map.Entry::getValue)
+                .findAny()
+                .getAsInt();
     }
 }
 
