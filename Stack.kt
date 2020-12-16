@@ -4,10 +4,10 @@ import kotlin.collections.ArrayList
 
 
 //Generic class
-//maxSize field for cases when we need to limit size of our collection
+//primary constructor for cases when we don't need to limit size of our collection
 class Stack<T>(capacity: Int) {
 
-    //secondary constructor for cases when we don't need to limit size of our collection
+    //secondary constructor for cases when we need to limit size of our collection using maxSize field
     constructor(capacity: Int, maxSize: Int): this(capacity) {
         this.maxSize = maxSize
     }
@@ -18,6 +18,7 @@ class Stack<T>(capacity: Int) {
     private var size = 0
     //max size if we want to limit it
     private var maxSize = Int.MAX_VALUE
+
 
     fun push(obj: T) {
         if (size >= maxSize)
